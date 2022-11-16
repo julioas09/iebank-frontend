@@ -149,7 +149,7 @@ export default {
   methods: {
     // GET accounts
     getAccounts() {
-      const path = "http://localhost:5000/accounts";
+      const path = `${process.env.VUE_APP_ROOT_URL}/accounts`;
       axios
         .get(path)
         .then((response) => {
@@ -161,7 +161,7 @@ export default {
     },
     // POST function
     createAccount(payload) {
-      const path = "http://localhost:5000/accounts";
+      const path = `${process.env.VUE_APP_ROOT_URL}/accounts`;
       axios
         .post(path, payload)
         .then((response) => {
@@ -183,7 +183,7 @@ export default {
     },
     // Update function
     updateAccount(payload, accountId) {
-      const path = `http://localhost:5000/accounts/${accountId}`;
+      const path = `${process.env.VUE_APP_ROOT_URL}/accounts/${accountId}`;
       axios
         .put(path, payload)
         .then((response) => {
@@ -204,7 +204,7 @@ export default {
     },
     // Delete account
     RESTdeleteAccount(accountId) {
-      const path = `http://localhost:5000/accounts/${accountId}`;
+      const path = `${process.env.VUE_APP_ROOT_URL}/accounts/${accountId}`;
       axios
         .delete(path)
         .then((response) => {
